@@ -397,7 +397,7 @@ namespace XmlNotepad {
         string GetRelative(string s) {
             if (baseUri == null) return s;
             Uri uri = new Uri(s);
-            return this.baseUri.MakeRelative(uri);
+            return this.baseUri.MakeRelativeUri(uri).LocalPath;
         }
     }
 

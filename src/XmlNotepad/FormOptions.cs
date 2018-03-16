@@ -253,7 +253,8 @@ namespace XmlNotepad
 
         public void Reset() {
             this.font = new Font("Courier New", 10, FontStyle.Regular);
-            elementColor = Color.FromArgb(0, 64, 128); 
+            //elementColor = Color.FromArgb(0, 64, 128);
+            elementColor = Color.FromArgb(0, 0, 0); 
             commentColor = Color.Green;
             attributeColor = Color.Maroon;
             piColor = Color.Purple;

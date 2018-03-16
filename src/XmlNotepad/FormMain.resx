@@ -1015,16 +1015,16 @@
   <data name="changeToToolStripMenuItem.AccessibleName" xml:space="preserve">
     <value>changeToToolStripMenuItem</value>
   </data>
-  <data name="changeToElementToolStripMenuItem1.AccessibleName" xml:space="preserve">
+  <data name="changeToElementToolStripMenuItem.AccessibleName" xml:space="preserve">
     <value>changeToElementToolStripMenuItem1</value>
   </data>
-  <data name="changeToElementToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="changeToElementToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>204, 22</value>
   </data>
-  <data name="changeToElementToolStripMenuItem1.Text" xml:space="preserve">
+  <data name="changeToElementToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Element</value>
   </data>
-  <data name="changeToElementToolStripMenuItem1.ToolTipText" xml:space="preserve">
+  <data name="changeToElementToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>Change the selected node into an XML element</value>
   </data>
   <data name="changeToAttributeToolStripMenuItem1.AccessibleName" xml:space="preserve">
@@ -3290,10 +3290,10 @@
   <data name="&gt;&gt;changeToToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;changeToElementToolStripMenuItem1.Name" xml:space="preserve">
-    <value>changeToElementToolStripMenuItem1</value>
+  <data name="&gt;&gt;changeToElementToolStripMenuItem.Name" xml:space="preserve">
+    <value>changeToElementToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;changeToElementToolStripMenuItem1.Type" xml:space="preserve">
+  <data name="&gt;&gt;changeToElementToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;changeToAttributeToolStripMenuItem1.Name" xml:space="preserve">

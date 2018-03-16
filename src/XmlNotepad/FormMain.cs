@@ -189,9 +189,8 @@ namespace XmlNotepad {
         private ToolStripMenuItem toolStripMenuItemUpdate;
         private ToolStripSeparator toolStripSeparator4;
         private ComboBox comboBoxLocation;
-        // ChangeTo menu
         private ToolStripMenuItem changeToToolStripMenuItem;
-        private ToolStripMenuItem changeToElementToolStripMenuItem1;
+        private ToolStripMenuItem changeToElementToolStripMenuItem;
         private ToolStripMenuItem changeToAttributeToolStripMenuItem1;
         private ToolStripMenuItem changeToTextToolStripMenuItem1;
         private ToolStripMenuItem changeToCDATAToolStripMenuItem1;
@@ -199,13 +198,13 @@ namespace XmlNotepad {
         private ToolStripMenuItem changeToProcessingInstructionToolStripMenuItem;
         private ToolStripSeparator toolStripMenuItem12;
         // ChangeTo Context menu...
-        private ToolStripMenuItem changeToContextMenuItem; 
+        private ToolStripMenuItem changeToContextMenuItem;
+        private ToolStripMenuItem changeToElementContextMenuItem;
         private ToolStripMenuItem changeToAttributeContextMenuItem;
         private ToolStripMenuItem changeToTextContextMenuItem;
         private ToolStripMenuItem changeToCDATAContextMenuItem;
         private ToolStripMenuItem changeToCommentContextMenuItem;
         private ToolStripMenuItem changeToProcessingInstructionContextMenuItem;
-        private ToolStripMenuItem changeToElementContextMenuItem;
         private ToolStripMenuItem incrementalSearchToolStripMenuItem;
         private ToolStripMenuItem deleteToolStripMenuItem1;
         private ToolStripMenuItem renameToolStripMenuItem;
@@ -276,7 +275,8 @@ namespace XmlNotepad {
             this.Font = f;
             this.settings["Font"] = f;
             System.Collections.Hashtable colors = new System.Collections.Hashtable();
-            colors["Element"] = Color.FromArgb(0, 64, 128);
+            //colors["Element"] = Color.FromArgb(0, 64, 128);
+            colors["Element"] = Color.FromArgb(0, 0, 0);
             colors["Attribute"] = Color.Maroon;
             colors["Text"] = Color.Black;
             colors["Comment"] = Color.Green;
@@ -697,7 +697,6 @@ namespace XmlNotepad {
             this.insertToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.renameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.duplicateToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.changeToElementContextMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changeToContextMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changeToAttributeContextMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changeToTextContextMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -760,7 +759,7 @@ namespace XmlNotepad {
             this.renameToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.duplicateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changeToToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.changeToElementToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.changeToElementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changeToAttributeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.changeToTextToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.changeToCDATAToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -788,6 +787,7 @@ namespace XmlNotepad {
             this.sourceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.schemasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fileAssociationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem11 = new System.Windows.Forms.ToolStripSeparator();
             this.nextErrorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -823,6 +823,7 @@ namespace XmlNotepad {
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.indexToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.checkUpdatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem10 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutXMLNotepadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemUpdate = new System.Windows.Forms.ToolStripMenuItem();
@@ -854,8 +855,7 @@ namespace XmlNotepad {
             this.tabPageDynamicHelp = new XmlNotepad.NoBorderTabPage();
             this.taskList = new XmlNotepad.TaskList();
             this.dynamicHelpViewer = new XmlNotepad.XsltViewer();
-            this.statsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.checkUpdatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            changeToElementContextMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.statusBarPanelMessage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusBarPanelBusy)).BeginInit();
             this.contextMenu1.SuspendLayout();
@@ -960,7 +960,7 @@ namespace XmlNotepad {
             // changeToContextMenuItem
             // 
             this.changeToContextMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.changeToElementContextMenuItem,
+            changeToElementContextMenuItem,
             this.changeToAttributeContextMenuItem,
             this.changeToTextContextMenuItem,
             this.changeToCDATAContextMenuItem,
@@ -971,9 +971,9 @@ namespace XmlNotepad {
             // 
             // changeToElementContextMenuItem
             // 
-            this.changeToElementContextMenuItem.Name = "changeToElementContextMenuItem";
+            changeToElementContextMenuItem.Name = "changeToElementContextMenuItem";
             resources.ApplyResources(changeToElementContextMenuItem, "changeToElementContextMenuItem");
-            this.changeToElementContextMenuItem.Click += new System.EventHandler(this.changeToElementContextMenuItem_Click);
+            changeToElementContextMenuItem.Click += new System.EventHandler(this.changeToElementContextMenuItem_Click);
             // 
             // changeToAttributeContextMenuItem
             // 
@@ -1386,7 +1386,7 @@ namespace XmlNotepad {
             // 
             resources.ApplyResources(this.changeToToolStripMenuItem, "changeToToolStripMenuItem");
             this.changeToToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.changeToElementToolStripMenuItem1,
+            this.changeToElementToolStripMenuItem,
             this.changeToAttributeToolStripMenuItem1,
             this.changeToTextToolStripMenuItem1,
             this.changeToCDATAToolStripMenuItem1,
@@ -1394,11 +1394,11 @@ namespace XmlNotepad {
             this.changeToProcessingInstructionToolStripMenuItem});
             this.changeToToolStripMenuItem.Name = "changeToToolStripMenuItem";
             // 
-            // changeToElementToolStripMenuItem1
+            // changeToElementToolStripMenuItem
             // 
-            this.changeToElementToolStripMenuItem1.Name = "changeToElementToolStripMenuItem1";
-            resources.ApplyResources(this.changeToElementToolStripMenuItem1, "changeToElementToolStripMenuItem1");
-            this.changeToElementToolStripMenuItem1.Click += new System.EventHandler(this.elementToolStripMenuItem1_Click);
+            resources.ApplyResources(this.changeToElementToolStripMenuItem, "changeToElementToolStripMenuItem");
+            this.changeToElementToolStripMenuItem.Name = "changeToElementToolStripMenuItem";
+            this.changeToElementToolStripMenuItem.Click += new System.EventHandler(this.elementToolStripMenuItem1_Click);
             // 
             // changeToAttributeToolStripMenuItem1
             // 
@@ -1574,6 +1574,12 @@ namespace XmlNotepad {
             resources.ApplyResources(this.schemasToolStripMenuItem, "schemasToolStripMenuItem");
             this.schemasToolStripMenuItem.Name = "schemasToolStripMenuItem";
             this.schemasToolStripMenuItem.Click += new System.EventHandler(this.schemasToolStripMenuItem_Click);
+            // 
+            // statsToolStripMenuItem
+            // 
+            this.statsToolStripMenuItem.Name = "statsToolStripMenuItem";
+            resources.ApplyResources(this.statsToolStripMenuItem, "statsToolStripMenuItem");
+            this.statsToolStripMenuItem.Click += new System.EventHandler(this.statsToolStripMenuItem_Click);
             // 
             // fileAssociationsToolStripMenuItem
             // 
@@ -1813,6 +1819,12 @@ namespace XmlNotepad {
             this.indexToolStripMenuItem.Name = "indexToolStripMenuItem";
             this.indexToolStripMenuItem.Click += new System.EventHandler(this.indexToolStripMenuItem_Click);
             // 
+            // checkUpdatesToolStripMenuItem
+            // 
+            this.checkUpdatesToolStripMenuItem.Name = "checkUpdatesToolStripMenuItem";
+            resources.ApplyResources(this.checkUpdatesToolStripMenuItem, "checkUpdatesToolStripMenuItem");
+            this.checkUpdatesToolStripMenuItem.Click += new System.EventHandler(this.checkUpdatesToolStripMenuItem_Click);
+            // 
             // toolStripMenuItem10
             // 
             this.toolStripMenuItem10.Name = "toolStripMenuItem10";
@@ -1985,6 +1997,7 @@ namespace XmlNotepad {
             this.xmlTreeView1.BackColor = System.Drawing.SystemColors.Window;
             this.xmlTreeView1.Name = "xmlTreeView1";
             this.xmlTreeView1.ResizerPosition = 200;
+            this.xmlTreeView1.ScrollPosition = new System.Drawing.Point(0, 0);
             this.xmlTreeView1.SelectedNode = null;
             this.helpProvider1.SetShowHelp(this.xmlTreeView1, ((bool)(resources.GetObject("xmlTreeView1.ShowHelp"))));
             // 
@@ -2039,19 +2052,6 @@ namespace XmlNotepad {
             this.dynamicHelpViewer.Name = "dynamicHelpViewer";
             this.dynamicHelpViewer.ShowFileStrip = true;
             this.helpProvider1.SetShowHelp(this.dynamicHelpViewer, ((bool)(resources.GetObject("dynamicHelpViewer.ShowHelp"))));
-            //
-            // checkUpdatesToolStripMenuItem
-            //
-            this.checkUpdatesToolStripMenuItem.Name = "checkUpdatesToolStripMenuItem";
-            resources.ApplyResources(this.checkUpdatesToolStripMenuItem, "checkUpdatesToolStripMenuItem");
-            this.checkUpdatesToolStripMenuItem.Click += new System.EventHandler(this.checkUpdatesToolStripMenuItem_Click);
-
-            // 
-            // statsToolStripMenuItem
-            // 
-            this.statsToolStripMenuItem.Name = "statsToolStripMenuItem";
-            resources.ApplyResources(this.statsToolStripMenuItem, "statsToolStripMenuItem");
-            this.statsToolStripMenuItem.Click += new System.EventHandler(this.statsToolStripMenuItem_Click);
             // 
             // FormMain
             // 
@@ -2631,10 +2631,10 @@ namespace XmlNotepad {
             this.toolStripButtonCopy.Enabled = this.copyToolStripMenuItem.Enabled = this.ctxMenuItemCopy.Enabled = hasXmlNode;
             this.duplicateToolStripMenuItem.Enabled = hasXmlNode;
 
+            this.changeToElementContextMenuItem.Enabled = this.changeToElementToolStripMenuItem.Enabled = hasSelection;
             this.changeToAttributeContextMenuItem.Enabled = this.changeToAttributeToolStripMenuItem1.Enabled = hasSelection;
             this.changeToCDATAContextMenuItem.Enabled = this.changeToCDATAToolStripMenuItem1.Enabled = hasSelection;
             this.changeToCommentContextMenuItem.Enabled = this.changeToCommentToolStripMenuItem1.Enabled = hasSelection;
-            this.changeToElementContextMenuItem.Enabled = this.changeToElementToolStripMenuItem1.Enabled = hasSelection;
             this.changeToProcessingInstructionContextMenuItem.Enabled = this.changeToProcessingInstructionToolStripMenuItem.Enabled = hasSelection;
             this.changeToTextContextMenuItem.Enabled = this.changeToTextToolStripMenuItem1.Enabled = hasSelection;
 
