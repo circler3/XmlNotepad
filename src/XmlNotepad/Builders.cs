@@ -169,7 +169,7 @@ namespace XmlNotepad {
             if (baseUri != null) {
                 try {
                     Uri uri = new Uri(s, UriKind.RelativeOrAbsolute);
-                    return baseUri.MakeRelativeUri(uri).LocalPath;
+                    return baseUri.MakeRelativeUri(uri).ToString();
                 } catch (UriFormatException) {
                     return s;
                 }

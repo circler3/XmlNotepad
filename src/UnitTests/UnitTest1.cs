@@ -1380,7 +1380,7 @@ Prefix 'user' is not defined. ");
             Sleep(200);
             w.SendKeystrokes("^c");
             CheckClipboard(@"
-    The XML markup in this version is Copyright © 1999 Jon Bosak.
+    The XML markup in this version is Copyright ?1999 Jon Bosak.
     This work may freely be distributed on condition that it not be
     modified or altered in any way.
     ");
@@ -1424,7 +1424,7 @@ Prefix 'user' is not defined. ");
             Trace.WriteLine("test we can replace 'This' using case sensitive.");
             findDialog.Window.SendKeystrokes("This{TAB}xxx%m%w{TAB}{TAB}{TAB}e%a");
             string expected = @"
-    The XML markup in this version is Copyright © 1999 Jon Bosak.
+    The XML markup in this version is Copyright ?1999 Jon Bosak.
     xxx work may freely be distributed on condition that it not be
     modified or altered in any way.
     ";
